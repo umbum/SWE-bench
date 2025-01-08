@@ -119,7 +119,7 @@ def load_model(model_name_or_path, peft_path):
         "cpu": "20GIB",
     }
     logger.info(f"Using max memory {max_memory}")
-    if "-7b" in model_name_or_path:
+    if "7b" in model_name_or_path:
         device_map = DEVICE_MAPS["7b"][str(torch.cuda.device_count())]
     elif "-13b" in model_name_or_path:
         device_map = DEVICE_MAPS["13b"][str(torch.cuda.device_count())]
